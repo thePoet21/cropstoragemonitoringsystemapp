@@ -1,14 +1,18 @@
 Crop Storage Monitoring System
 
 ## Overview:
-ThisCrop Storage Monitoring System App is designed to monitor gas, temperature, and humidity levels in your storage facility and alert you in case of any potential changes in these three. The app is designed to be user-friendly and easy to use, providing you with real-time data on the gas, temperature, and humidity levels in your environment.
+This Crop Storage Monitoring System App is designed to monitor gas, temperature, and humidity levels in your storage facility and alert you in case of any potential changes in these three. The app is designed to be user-friendly and easy to use, providing you with real-time data on the gas, temperature, and humidity levels in your environment.
 
 # Features:
 
 Real-time gas monitoring: The app constantly monitors gas levels in your storage facility and provides real-time updates.
+
 Real-time temperature monitoring: The app constantly monitors temperature levels in your storage facility and provides real-time updates.
+
 Real-time humidity monitoring: The app constantly monitors humidity levels in your storage facility and provides real-time updates.
+
 Customizable alerts: You can set up custom alerts to be notified in case of any sudden changes in gas, temperature, and humidity levels.
+
 User-friendly interface: The app is designed to be easy to use, with a simple and intuitive interface.
 
 # Installation:
