@@ -1,4 +1,4 @@
-LFP Crop Storage Monitoring System
+Crop Storage Monitoring System
 
 ## Overview:
 ThisCrop Storage Monitoring System App is designed to monitor gas, temperature, and humidity levels in your storage facility and alert you in case of any potential changes in these three. The app is designed to be user-friendly and easy to use, providing you with real-time data on the gas, temperature, and humidity levels in your environment.
