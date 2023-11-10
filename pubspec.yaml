@@ -1,0 +1,51 @@
+name: csms
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.19.6 <3.0.0'
+
+dependencies:
+  firebase_auth: ^4.4.0
+  flutter_native_splash: ^2.2.19
+  flutter:
+    sdk: flutter
+  google_maps_flutter: ^2.2.5
+  firebase_database: ^10.1.0
+  fl_chart: ^0.61.0
+  geolocator: ^9.0.2
+  flutter_svg: ^2.0.5
+  flutter_local_notifications: ^14.0.0+2
+  url_launcher: ^6.1.11
+  webview_flutter: ^4.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21
+
+flutter_native_splash:
+  image: assets/images/logo.png
+  color: "046380"
+  
+  android_12:
+    image: assets/images/logo.png
+    color: "046380"
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf

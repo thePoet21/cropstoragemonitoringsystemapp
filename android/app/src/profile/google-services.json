@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "354609637385",
+    "project_id": "gasleakagedetector-69d9b",
+    "storage_bucket": "gasleakagedetector-69d9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354609637385:android:1c3a09535946d7dac9f0d8",
+        "android_client_info": {
+          "package_name": "com.example.gasdetector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354609637385-dha9skcl11hb5e0j128buetcrj6l8sbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCF1gbn4JhpR3V-QFSB-7K3SIvVNRz4fI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354609637385-dha9skcl11hb5e0j128buetcrj6l8sbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:354609637385:android:f7c6752434a31903c9f0d8",
+        "android_client_info": {
+          "package_name": "com.example.helloworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "354609637385-dha9skcl11hb5e0j128buetcrj6l8sbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCF1gbn4JhpR3V-QFSB-7K3SIvVNRz4fI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "354609637385-dha9skcl11hb5e0j128buetcrj6l8sbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
