@@ -3,22 +3,22 @@ import 'package:csms/utils/constants.dart';
 
 // import '../utils/constants.dart';
 
-class GasIndicator extends StatefulWidget {
-  final double gasLevel; // gas concentration level
+class TemperatureIndicator extends StatefulWidget {
+  final double temperatureLevel; // temperature concentration level
   final double minLevel; // minimum safe level
   final double maxLevel; // maximum safe level
-  const GasIndicator({
+  const TemperatureIndicator({
     Key? key,
-    required this.gasLevel,
+    required this.temperatureLevel,
     required this.minLevel,
     required this.maxLevel,
   }) : super(key: key);
 
   @override
-  State<GasIndicator> createState() => _GasIndicatorState();
+  State<TemperatureIndicator> createState() => _TemperatureIndicatorState();
 }
 
-class _GasIndicatorState extends State<GasIndicator> {
+class _TemperatureIndicatorState extends State<TemperatureIndicator> {
   @override
   void initState() {
     super.initState();
@@ -30,10 +30,10 @@ class _GasIndicatorState extends State<GasIndicator> {
     String text;
 
     // Determine the color and text based on the gas level
-    if (widget.gasLevel < widget.minLevel) {
+    if (widget.temperatureLevel < widget.minLevel) {
       color = Colors.green;
       text = 'Safe';
-    } else if (widget.gasLevel > widget.maxLevel) {
+    } else if (widget.temperatureLevel > widget.maxLevel) {
       color = Colors.red;
       text = 'Danger';
     } else {
@@ -58,7 +58,7 @@ class _GasIndicatorState extends State<GasIndicator> {
             children: [
               RichText(
                 text: TextSpan(
-                  text: '${widget.gasLevel} ',
+                  text: '${widget.temperatureLevel} ',
                   style: TextStyle(
                     fontSize: 80,
                     fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class _GasIndicatorState extends State<GasIndicator> {
                   ),
                   children: const [
                     TextSpan(
-                      text: 'ppm',
+                      text: 'Degrees',
                       style: TextStyle(
                         fontSize: 32,
                       ),

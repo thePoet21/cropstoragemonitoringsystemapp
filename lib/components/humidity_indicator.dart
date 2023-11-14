@@ -3,22 +3,22 @@ import 'package:csms/utils/constants.dart';
 
 // import '../utils/constants.dart';
 
-class GasIndicator extends StatefulWidget {
-  final double gasLevel; // gas concentration level
+class HumidityIndicator extends StatefulWidget {
+  final double humidityLevel;// humidity concentration level
   final double minLevel; // minimum safe level
   final double maxLevel; // maximum safe level
-  const GasIndicator({
+  const HumidityIndicator({
     Key? key,
-    required this.gasLevel,
+    required this.humidityLevel,
     required this.minLevel,
     required this.maxLevel,
   }) : super(key: key);
 
   @override
-  State<GasIndicator> createState() => _GasIndicatorState();
+  State<HumidityIndicator> createState() => _HumidityIndicatorState();
 }
 
-class _GasIndicatorState extends State<GasIndicator> {
+class _HumidityIndicatorState extends State<HumidityIndicator> {
   @override
   void initState() {
     super.initState();
@@ -29,11 +29,11 @@ class _GasIndicatorState extends State<GasIndicator> {
     Color color;
     String text;
 
-    // Determine the color and text based on the gas level
-    if (widget.gasLevel < widget.minLevel) {
+    // Determine the color and text based on the humidity level
+    if (widget.humidityLevel < widget.minLevel) {
       color = Colors.green;
       text = 'Safe';
-    } else if (widget.gasLevel > widget.maxLevel) {
+    } else if (widget.humidityLevel > widget.maxLevel) {
       color = Colors.red;
       text = 'Danger';
     } else {
@@ -58,7 +58,7 @@ class _GasIndicatorState extends State<GasIndicator> {
             children: [
               RichText(
                 text: TextSpan(
-                  text: '${widget.gasLevel} ',
+                  text: '${widget.humidityLevel} ',
                   style: TextStyle(
                     fontSize: 80,
                     fontWeight: FontWeight.bold,
@@ -68,7 +68,7 @@ class _GasIndicatorState extends State<GasIndicator> {
                   ),
                   children: const [
                     TextSpan(
-                      text: 'ppm',
+                      text: 'Percent',
                       style: TextStyle(
                         fontSize: 32,
                       ),

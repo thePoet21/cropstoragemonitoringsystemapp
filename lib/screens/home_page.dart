@@ -1,4 +1,6 @@
 
+import 'package:csms/components/humidity_indicator.dart';
+import 'package:csms/components/temperature_indicator.dart';
 import 'package:csms/services/geolocator.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,6 +26,10 @@ class _HomePageState extends State<HomePage> {
   String data = '0.0';
   List<FlSpot> gasLevelData = [];
   double _gasConcentration = 0;
+  List<FlSpot> temperatureLevelData = [];
+  double _temperatureConcentration = 0;
+  List<FlSpot> humidityLevelData = [];
+  double _humidityConcentration = 0;
   final NotificationService _notificationService = NotificationService();
 
   @override
@@ -36,6 +42,8 @@ class _HomePageState extends State<HomePage> {
     //retrieveGasLevelData();
     determinePosition();
     onGasConcentrationChanged(double.parse(data));
+    onTemperatureConcentrationChanged(double.parse(data));
+    onHumidityConcentrationChanged(double.parse(data));
   }
 
   void listenToDataChanges() {
@@ -78,42 +86,68 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            const SizedBox(height: 56),
+            const SizedBox(height: 32),
             // Row(
             //   mainAxisAlignment: MainAxisAlignment.start,
             //   children: const [
             //     Icon(
             //       Icons.person,
-            //       size: 32,
+            //       size: 24,
             //     )
             //   ],
             // ),
-            // const SizedBox(height: 16),
+            // const SizedBox(height: 8),
             Text(
               'Welcome, ${_user!.displayName}',
               style: kHeadingTextStyle,
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 12),
             const Text(
               'Current Gas Reading',
               style: kLargeTextStyle,
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 6),
             GasIndicator(
               gasLevel: double.parse(data),
-              minLevel: 85,
-              maxLevel: 200,
+              minLevel: 4,
+              maxLevel: 19,
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 12),
+            // Text(data),
+             const SizedBox(height: 6),
+            const Text(
+              'Current Temperature Reading',
+              style: kLargeTextStyle,
+            ),
+            const SizedBox(height: 6),
+            TemperatureIndicator(
+              temperatureLevel: double.parse(data),
+              minLevel: 4,
+              maxLevel: 19,
+            ),
+            const SizedBox(height: 12),
+            // Text(data),
+             const SizedBox(height: 6),
+            const Text(
+              'Current Humidity Reading',
+              style: kLargeTextStyle,
+            ),
+            const SizedBox(height: 6),
+            HumidityIndicator(
+              humidityLevel: double.parse(data),
+              minLevel: 45,
+              maxLevel: 65,
+            ),
+            const SizedBox(height: 12),
             // Text(data),
           ],
         ),
       ),
-      
+    
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: ClipRRect(
@@ -180,4 +214,10 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
+
+void onHumidityConcentrationChanged(double parse) {
+}
+
+void onTemperatureConcentrationChanged(double parse) {
 }
