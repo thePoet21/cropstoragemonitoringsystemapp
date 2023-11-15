@@ -157,7 +157,7 @@ class _SettingsPageState extends State<SettingsPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HomePage(),
+                      builder: (context) => HomePage(selectedCrop: {}, selectedCrops: [],),
                     ),
                   );
                 } else if (index == 1) {

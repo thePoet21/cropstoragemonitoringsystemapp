@@ -1,3 +1,4 @@
+import 'package:csms/screens/home_page.dart';
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
@@ -5,7 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:csms/screens/auth/signup_page.dart';
 import 'package:csms/utils/constants.dart';
 
-import 'screens/home_page.dart';
+import 'screens/landing_page.dart';
 import 'screens/auth/login_page.dart';
 
 void main() async {
@@ -33,11 +34,11 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: kBackgroundColor,
       ),
-      initialRoute: _auth.currentUser != null ? '/home' : '/login',
+      initialRoute: _auth.currentUser != null ? '/landing' : '/login',
       routes: {
         '/login': (context) => const LoginPage(),
         '/signup': (context) => const SignupPage(),
-        '/home': (context) => const HomePage(),
+        '/landing': (context) => const LandingPage(),
       },
     );
   }

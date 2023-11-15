@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../home_page.dart';
+import '../landing_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -189,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const HomePage(),
+            builder: (context) => const LandingPage(),
           ),
         );
       } on FirebaseAuthException catch (e) {
