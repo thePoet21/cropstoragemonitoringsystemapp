@@ -1,15 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_database/firebase_database.dart';
-import 'package:csms/components/humidity_indicator.dart';
-import 'package:csms/components/temperature_indicator.dart';
-import 'package:csms/components/gas_indicator.dart';
-import 'package:fl_chart/fl_chart.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import '../utils/constants.dart';
-import 'settings.dart';
-
 
 class HomePage extends StatefulWidget {
   late final Map<String, dynamic> selectedCrop;
@@ -19,7 +8,6 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-
 
 class _HomePageState extends State<HomePage> {
   final User? _user = FirebaseAuth.instance.currentUser;
@@ -56,29 +44,10 @@ class _HomePageState extends State<HomePage> {
   });
 }
 
-void listenToHumidityDataChanges() {
-  final databaseReference = FirebaseDatabase.instance.reference();
-  databaseReference.child("sensor/humidity").onValue.listen((event) {
-    setState(() {
-      Object? values = event.snapshot.value;
-      humidityData = values.toString();
-    });
-  });
-}
-void loadSelectedCrop() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    String? storedCropString = prefs.getString('selectedCrop');
-    if (storedCropString != null) {
-      setState(() {
-        widget.selectedCrop = Map<String, dynamic>.from(
-          Map<String, dynamic>.fromIterable(
-            storedCropString.split(', '),
-            key: (item) => item.split(': ')[0],
-            value: (item) => item.split(': ')[1],
-          ),
-        );
-      });
-    }
+  @override
+  void initState() {
+    super.initState();
+    fetchData(); // Fetch data on widget initialization
   }
 
   @override
@@ -92,13 +61,8 @@ void loadSelectedCrop() async {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
             Text(
-              'Welcome, ${_user!.displayName}',
-              style: kHeadingTextStyle,
-            ),
-            const SizedBox(height: 24),
-            const Text(
               'Selected Crop Details:',
               style: TextStyle(
                 fontSize: 18,
@@ -144,11 +108,6 @@ void loadSelectedCrop() async {
               minLevel: 4,
               maxLevel: 19,
             ),
-            const SizedBox(height: 12),
-            HumidityIndicator(
-              humidityLevel: double.parse(humidityData),
-              minLevel: 45,
-              maxLevel: 65,
             ),
           ],
         ),
