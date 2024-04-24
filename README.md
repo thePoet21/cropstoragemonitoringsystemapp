@@ -22,4 +22,4 @@ The CSMS App is compatible with both iOS and Android devices. It requires iOS 11
 If you have any issues or questions regarding the Crop Storage Monitoring System App, please contact our support team at support@csmsapp.com.
 
 # Disclaimer:
-This app is designed to be used as a supplement to existing gas detection systems and is not a replacement for professional gas detection equipment. The app does not guarantee 100% accuracy and is not responsible for any damages or losses resulting from the use of the app.
+This app is designed to be used as a supplement to existing gas, temperature and humidity detection systems and is not a replacement for professional equipment. The app does not guarantee 100% accuracy and is not responsible for any damages or losses resulting from the use of the app.
